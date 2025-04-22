@@ -1,0 +1,4 @@
+model,best_score,best_params
+svm,0.9250766660215584,"{'kernel': 'rbf', 'gamma': 'scale', 'C': 10}"
+logistic_regression,0.9197419788643983,"{'penalty': 'l2', 'C': 10}"
+random_forest,0.9036481940686043,"{'n_estimators': 50, 'min_samples_split': 5, 'max_depth': None, 'criterion': 'gini'}"
