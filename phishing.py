@@ -55,22 +55,28 @@ model_params = {
 }
 results = []
 
-for name, mp in model_params.items():
-    print(f"working on {name}..")
-    search = RandomizedSearchCV(mp['model'], mp['params'], cv=5, n_iter=10, scoring='f1', n_jobs=-1)
-    search.fit(X_train_vec, y_train)
+# for name, mp in model_params.items():
+#     print(f"working on {name}..")
+#     search = RandomizedSearchCV(mp['model'], mp['params'], cv=5, n_iter=10, scoring='f1', n_jobs=-1)
+#     search.fit(X_train_vec, y_train)
 
-    best_model = search.best_estimator_
-    best_score = search.best_score_
-    best_params = search.best_params_
+#     best_model = search.best_estimator_
+#     best_score = search.best_score_
+#     best_params = search.best_params_
 
-    results.append({
-            'model': name,
-            'best_score': best_score,
-            'best_params': best_params
-        })
+#     results.append({
+#             'model': name,
+#             'best_score': best_score,
+#             'best_params': best_params
+#         })
 
-df_results = pd.DataFrame(results, columns=['model', 'best_score', 'best_params'])
-df_results = df_results.sort_values(by='best_score', ascending=False).reset_index(drop=True)
+# df_results = pd.DataFrame(results, columns=['model', 'best_score', 'best_params'])
+# df_results = df_results.sort_values(by='best_score', ascending=False).reset_index(drop=True)
 
-df_results.to_csv("model_comparison_results.csv", index=False)
+# df_results.to_csv("model_comparison_results.csv", index=False)
+
+# svm,0.9250766660215584,"{'kernel': 'rbf', 'gamma': 'scale', 'C': 10}"
+
+clt = SVC(kernel='rbf',gamma='scale',C=10)
+clt.fit(X_train_vec,y_train)
+print(clt.score(X_test_vec,y_test))
