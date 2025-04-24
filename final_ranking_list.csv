@@ -1,7 +1,0 @@
-model,best_score,test_accuracy,best_params
-svm,0.9868389536716041,0.990667623833453,"{'model__C': np.float64(1.9182496720710063), 'model__gamma': 'scale', 'model__kernel': 'linear'}"
-random_forest,0.9758318769160244,0.9784637473079684,"{'model__max_depth': None, 'model__min_samples_split': 6, 'model__n_estimators': 152}"
-logistic_regression,0.9830100564421397,0.9877961234745154,"{'model__C': np.float64(8.424426408004217), 'model__penalty': 'l2'}"
-multinomialNB,0.9798994355786034,0.9820531227566404,"{'model__alpha': np.float64(0.056411579027100256), 'model__fit_prior': False}"
-decision_tree,0.9633871013952955,0.9712849964106246,"{'model__criterion': 'gini', 'model__max_depth': None, 'model__min_samples_split': 8}"
-knn,0.9609961894393033,0.9734386216798278,"{'model__metric': 'euclidean', 'model__n_neighbors': 9, 'model__weights': 'distance'}"
