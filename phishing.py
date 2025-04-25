@@ -6,7 +6,6 @@ from sklearn.metrics import precision_recall_curve, classification_report
 from sklearn.preprocessing import StandardScaler
 from sklearn.feature_extraction.text import CountVectorizer
 
-
 df = pd.read_csv("dataset_phishing.csv")
 # df=df.head(500)
 df['label'] = df['status'].apply(lambda x: 1 if x == "phishing" else 0)
