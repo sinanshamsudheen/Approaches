@@ -12,7 +12,7 @@ import torch
 df = pd.read_csv('spam.csv', encoding='latin-1')[['Category', 'Message']]
 df['spam'] = df['Category'].apply(lambda x: 1 if x == 'spam' else 0)
 
-# Use fewer rows for lower RAM usage (optional)
+# Use fewer rows for lower RAM usage (weak pc here)
 df = df.head(500)
 
 X = df['Message']
@@ -67,3 +67,4 @@ predictions = model.predict(X_test)
 
 from sklearn.metrics import classification_report
 print(classification_report(y_test, predictions))
+
